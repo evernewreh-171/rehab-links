@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>復健科填報專區</title>
+    <style>
+        /* 容器設定 */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        /* 基礎按鈕樣式 */
+        .btn {
+            width: 300px;
+            padding: 20px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* 顏色設定 */
+        .btn-primary { background-color: #007BFF; } /* 藍色 */
+        .btn-primary:hover { background-color: #0056b3; }
+
+        .btn-secondary { background-color: #28A745; } /* 綠色 */
+        .btn-secondary:hover { background-color: #1e7e34; }
+
+        .btn-warm { background-color: #FD7E14; } /* 橘色 */
+        .btn-warm:hover { background-color: #e86c00; }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <h1 style="color: #333;">🏥 復健科填報系統</h1>
+
+        <!-- 按鈕 1：填報專區 -->
+        <a href="https://forms.gle/5VCj9cvXcdQ28A6W9" class="btn btn-primary" target="_blank">
+            📝 RCW填報專區
+        </a>
+
+        <!-- 按鈕 2：RCW 統計表 -->
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSn_QV-GtLvcAQu5GtclHarlflZGgowhTrqTLqQ61QYNJmFSdZHSOsvNjXeIAs12LxHdmv2ERlJzFbD/pubhtml" class="btn btn-secondary" target="_blank">
+            📊 RCW 統計表查詢
+        </a>
+
+        <!-- 按鈕 3：訂餐單 (請確認 href 內的網址是否已更新為你複製的那串) -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExlKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-warm" target="_blank">
+            🍱 營新販賣部訂餐單
+        </a>
+    </div>
+
+</body>
+</html>
