@@ -2,40 +2,61 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    
-    <!-- 1. 設定加入主畫面時的圖示，href 的檔案名稱必須跟你在 GitHub 上傳的一模一樣 -->
+    <!-- 手機圖示設定 -->
     <link rel="apple-touch-icon" href="icon.png">
-
-    <!-- 2. 開啟 App 模式，隱藏瀏覽器的網址列與工具欄 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    
-    <!-- 3. 設定狀態列（手機最上方顯示電量時間的那一列）的顏色 -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <!-- 4. 設定在桌面圖示下方顯示的名稱 -->
     <meta name="apple-mobile-web-app-title" content="復健填報">
-
-    <title>復健科填報專區</title>
+    
+    <title>復健科填報系統</title>
+    
     <style>
-        /* ...原本的 CSS 樣式... */
+        /* 這裡就是讓網頁變漂亮的關鍵 CSS */
+        body {
+            background-color: #f8f9fa;
+            font-family: "Microsoft JhengHei", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* 垂直堆疊 */
+            align-items: center;    /* 置中 */
+            gap: 20px;              /* 按鈕間距 */
+            margin-top: 50px;
+        }
+
+        .btn {
+            width: 280px;
+            padding: 20px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary { background-color: #007BFF; } /* 藍色 */
+        .btn-secondary { background-color: #28A745; } /* 綠色 */
+        .btn-warm { background-color: #FD7E14; } /* 橘色 */
     </style>
-</head><body>
+</head>
+<body>
 
     <div class="button-container">
         <h1 style="color: #333;">🏥 復健科填報系統</h1>
 
-        <!-- 按鈕 1：填報專區 -->
         <a href="https://forms.gle/5VCj9cvXcdQ28A6W9" class="btn btn-primary" target="_blank">
             📝 RCW填報專區
         </a>
 
-        <!-- 按鈕 2：RCW 統計表 -->
         <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSn_QV-GtLvcAQu5GtclHarlflZGgowhTrqTLqQ61QYNJmFSdZHSOsvNjXeIAs12LxHdmv2ERlJzFbD/pubhtml" class="btn btn-secondary" target="_blank">
             📊 RCW 統計表查詢
         </a>
 
-        <!-- 按鈕 3：訂餐單 (請確認 href 內的網址是否已更新為你複製的那串) -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExlKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-warm" target="_blank">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExIKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-warm" target="_blank">
             🍱 營新販賣部訂餐單
         </a>
     </div>
