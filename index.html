@@ -10,6 +10,7 @@
     <title>復健科填報系統</title>
     
     <style>
+        /* 這裡就是讓網頁變漂亮的關鍵 CSS */
         body {
             background-color: #f8f9fa;
             font-family: "Microsoft JhengHei", sans-serif;
@@ -19,9 +20,9 @@
 
         .button-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column; /* 垂直堆疊 */
+            align-items: center;    /* 置中 */
+            gap: 20px;              /* 按鈕間距 */
             margin-top: 50px;
         }
 
@@ -35,16 +36,11 @@
             border-radius: 12px;
             font-weight: bold;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s; /* 點擊時的小縮放效果 */
         }
 
-        .btn:active {
-            transform: scale(0.95); /* 手機點擊按下去的感覺 */
-        }
-
-        .btn-primary { background-color: #007BFF; }
-        .btn-secondary { background-color: #28A745; }
-        .btn-warm { background-color: #FD7E14; }
+        .btn-primary { background-color: #007BFF; } /* 藍色 */
+        .btn-secondary { background-color: #28A745; } /* 綠色 */
+        .btn-warm { background-color: #FD7E14; } /* 橘色 */
     </style>
 </head>
 <body>
@@ -53,9 +49,17 @@
         <h1 style="color: #333;">🏥 復健科填報系統</h1>
 
         <a href="https://forms.gle/5VCj9cvXcdQ28A6W9" class="btn btn-primary" target="_blank">
-            📝 RCW 填報專區
+            📝 RCW填報專區
         </a>
 
-       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExIKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-warm" target="_blank">
-    🍱 營新販賣部訂餐單
-</a>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSn_QV-GtLvcAQu5GtclHarlflZGgowhTrqTLqQ61QYNJmFSdZHSOsvNjXeIAs12LxHdmv2ERlJzFbD/pubhtml" class="btn btn-secondary" target="_blank">
+            📊 RCW 統計表查詢
+        </a>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExlKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-warm" target="_blank">
+            🍱 營新販賣部訂餐單
+        </a>
+    </div>
+
+</body>
+</html>
