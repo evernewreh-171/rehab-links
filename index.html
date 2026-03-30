@@ -2,10 +2,8 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <!-- 隱身設定 -->
     <meta name="robots" content="noindex, nofollow">
 
-    <!-- 手機圖示設定 -->
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,8 +25,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 18px; /* 縮小一點間距以容納四個按鈕 */
-            margin-top: 40px;
+            gap: 15px; /* 稍微縮小間距以容納 5 個按鈕 */
+            margin-top: 30px;
             width: 100%;
             max-width: 400px;
         }
@@ -41,8 +39,8 @@
 
         .btn {
             width: 85%;
-            padding: 18px;
-            font-size: 19px;
+            padding: 16px; /* 稍微縮小高度，讓五個按鈕不超出螢幕 */
+            font-size: 18px;
             color: white;
             text-align: center;
             text-decoration: none;
@@ -60,12 +58,13 @@
         .btn-blue { background-color: #007BFF; }
         .btn-green { background-color: #28A745; }
         .btn-orange { background-color: #FD7E14; }
-        .btn-notion { background-color: #37352F; } /* Notion 經典深灰色 */
+        .btn-purple { background-color: #6F42C1; } /* 班表專用紫色 */
+        .btn-notion { background-color: #37352F; } /* Notion 深灰色 */
 
         .footer {
-            margin-top: 25px;
+            margin-top: 20px;
             color: #999;
-            font-size: 13px;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -74,7 +73,6 @@
     <div class="button-container">
         <h1>🏥 復健科填報系統</h1>
 
-        <!-- 原本的三個按鈕 -->
         <a href="https://forms.gle/5VCj9cvXcdQ28A6W9" class="btn btn-blue" target="_blank">
             📝 RCW 填報專區
         </a>
@@ -87,12 +85,16 @@
             🍱 營新販賣部訂餐單
         </a>
 
-        <!-- 新增的第 4 個 Notion 按鈕 -->
-        <a href="https://river-beef-217.notion.site/2a2a4fa1d89280b3afdbd5d4428bb869?v=2a2a4fa1d89281238ca0000c06ef4770" class="btn btn-notion" target="_blank">
-            📓 休假預排 Notion
+        <!-- 班表按鈕：請將連結換成你的 Notion 班表頁面連結 -->
+        <a href="https://river-beef-217.notion.site/333a4fa1d89280759b47e635064e9bec?pvs=143" target="_blank">
+            📅 復健科本月班表
         </a>
 
-        <div class="footer">內部專用系統</div>
+        <a href="https://river-beef-217.notion.site/2a2a4fa1d89280b3afdbd5d4428bb869?v=2a2a4fa1d89281238ca0000c06ef4770" class="btn btn-notion" target="_blank">
+            📓 復健科行政 Notion
+        </a>
+
+        <div class="footer">內部專用系統 · 內容定期更新</div>
     </div>
 
 </body>
