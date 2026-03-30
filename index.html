@@ -2,10 +2,10 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <!-- 1. 隱身設定：告訴 Google 不要搜尋到這個網頁 -->
+    <!-- 隱身設定 -->
     <meta name="robots" content="noindex, nofollow">
 
-    <!-- 2. 手機 App 模式與圖示設定 -->
+    <!-- 手機圖示設定 -->
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,46 +27,45 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 22px;
-            margin-top: 50px;
+            gap: 18px; /* 縮小一點間距以容納四個按鈕 */
+            margin-top: 40px;
             width: 100%;
             max-width: 400px;
         }
 
         h1 {
             color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-size: 22px;
+            margin-bottom: 5px;
         }
 
         .btn {
             width: 85%;
-            padding: 22px;
-            font-size: 20px;
+            padding: 18px;
+            font-size: 19px;
             color: white;
             text-align: center;
             text-decoration: none;
-            border-radius: 15px;
+            border-radius: 12px;
             font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.1s;
         }
 
-        /* 按鈕點擊效果 */
         .btn:active {
-            transform: scale(0.95);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transform: scale(0.96);
         }
 
-        .btn-primary { background-color: #007BFF; }
-        .btn-secondary { background-color: #28A745; }
-        .btn-warm { background-color: #FD7E14; }
+        /* 顏色定義 */
+        .btn-blue { background-color: #007BFF; }
+        .btn-green { background-color: #28A745; }
+        .btn-orange { background-color: #FD7E14; }
+        .btn-notion { background-color: #37352F; } /* Notion 經典深灰色 */
 
-        .footer-note {
-            margin-top: 30px;
-            color: #888;
-            font-size: 14px;
+        .footer {
+            margin-top: 25px;
+            color: #999;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -75,22 +74,25 @@
     <div class="button-container">
         <h1>🏥 復健科填報系統</h1>
 
-        <!-- 按鈕 1 -->
-        <a href="https://forms.gle/5VCj9cvXcdQ28A6W9" class="btn btn-primary" target="_blank">
+        <!-- 原本的三個按鈕 -->
+        <a href="https://forms.gle/5VCj9cvXcdQ28A6W9" class="btn btn-blue" target="_blank">
             📝 RCW 填報專區
         </a>
 
-        <!-- 按鈕 2 -->
-        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSn_QV-GtLvcAQu5GtclHarlflZGgowhTrqTLqQ61QYNJmFSdZHSOsvNjXeIAs12LxHdmv2ERlJzFbD/pubhtml" class="btn btn-secondary" target="_blank">
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSn_QV-GtLvcAQu5GtclHarlflZGgowhTrqTLqQ61QYNJmFSdZHSOsvNjXeIAs12LxHdmv2ERlJzFbD/pubhtml" class="btn btn-green" target="_blank">
             📊 RCW 統計表查詢
         </a>
 
-        <!-- 按鈕 3：已修正 viewform 連結 -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExIKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-warm" target="_blank">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExIKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-orange" target="_blank">
             🍱 營新販賣部訂餐單
         </a>
 
-        <div class="footer-note">內部系統 · 請勿外流網址</div>
+        <!-- 新增的第 4 個 Notion 按鈕 -->
+        <a href="https://river-beef-217.notion.site/2a2a4fa1d89280b3afdbd5d4428bb869?v=2a2a4fa1d89281238ca0000c06ef4770" class="btn btn-notion" target="_blank">
+            📓 休假預排 Notion
+        </a>
+
+        <div class="footer">內部專用系統</div>
     </div>
 
 </body>
