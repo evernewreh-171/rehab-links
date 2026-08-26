@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
-    <!-- 保留 App 模式，但我們自己做導航欄 -->
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -25,7 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px; /* 稍微縮小間距以容納 5 個按鈕 */
+            gap: 15px;
             margin-top: 30px;
             width: 100%;
             max-width: 400px;
@@ -39,7 +38,7 @@
 
         .btn {
             width: 85%;
-            padding: 16px; /* 稍微縮小高度，讓五個按鈕不超出螢幕 */
+            padding: 16px;
             font-size: 18px;
             color: white;
             text-align: center;
@@ -56,12 +55,13 @@
 
         /* 顏色定義 */
         .btn-blue { background-color: #007BFF; }
+        .btn-teal { background-color: #20c997; } /* 震波專用青綠色 */
         .btn-green { background-color: #28A745; }
         .btn-orange { background-color: #FD7E14; }
-        .btn-red { background-color: #DC3545; } /* 副木登記顏色 */
-        .btn-lightblue { background-color: #17A2B8; } /* 教育訓練按鈕顏色 */
-        .btn-purple { background-color: #6F42C1; } /* 班表專用紫色 */
-        .btn-notion { background-color: #37352F; } /* Notion 深灰色 */
+        .btn-red { background-color: #DC3545; }
+        .btn-lightblue { background-color: #17A2B8; }
+        .btn-purple { background-color: #6F42C1; }
+        .btn-notion { background-color: #37352F; }
 
         .footer {
             margin-top: 20px;
@@ -71,8 +71,6 @@
     </style>
 </head>
 <body>
-<div class="nav-bar">
-        
     <div class="button-container">
         <h1>🏥 復健科填報及查詢</h1>
 
@@ -80,26 +78,36 @@
             📝 RCW 填報專區
         </a>
 
+        <!-- 新增：Power BI 震波+RCW 報表按鈕 -->
+        <a href="https://app.powerbi.com/reportEmbed?reportId=a8d3666b-c444-4536-b107-13f2e902eba3&autoAuth=true&ctid=39ea2082-06c9-41d4-937f-762383de7798" class="btn btn-teal" target="_blank">
+            📈 震波 + RCW 統計報表
+        </a>
+
         <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSeCsyduPdC6PQYwzxFjtrDeyrDAeeCgPVk_lhL493jmxSt-YWn67P6PH8NbsS_QXKor6ZCTFKqhTNe/pubhtml" class="btn btn-green" target="_blank">
             📊 RCW 統計表查詢
         </a>
-        <a href="https://river-beef-217.notion.site/342a4fa1d89280198d30d1fcd8233cfb" class="btn btn-red" target="_blank">🧤 副木登記與查詢</a>
+
+        <a href="https://river-beef-217.notion.site/342a4fa1d89280198d30d1fcd8233cfb" class="btn btn-red" target="_blank">
+            🧤 副木登記與查詢
+        </a>
 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSd55zPZiYoKzxIGExlKgFoffSWnSY3JF_uzBT6tp2lMyKiOGw/viewform" class="btn btn-orange" target="_blank">
             🍱 營新販賣部訂餐單
         </a>
 
-       <!-- 班表連結：已更新為 Google Sheets -->
-        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8sMYLVmyNsCceSgwKg0z1clWeST080fBzWgEqKYE-WIVwI7RZoIPv63Mo7p83YJOTXpVQkUjx3y1I/pubhtml" class="btn btn-purple" target="_blank">📅 復健科本月班表</a>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8sMYLVmyNsCceSgwKg0z1clWeST080fBzWgEqKYE-WIVwI7RZoIPv63Mo7p83YJOTXpVQkUjx3y1I/pubhtml" class="btn btn-purple" target="_blank">
+            📅 復健科本月班表
+        </a>
 
         <a href="https://river-beef-217.notion.site/2a2a4fa1d89280b3afdbd5d4428bb869?v=2a2a4fa1d89281238ca0000c06ef4770" class="btn btn-notion" target="_blank">
             📓 休假預排 Notion
         </a>
-        <!-- 新增：教育訓練 PDF 按鈕 -->
-        <a href="https://river-beef-217.notion.site/2026-334a4fa1d89280db919fca0b1515e700?source=copy_link" class="btn btn-lightblue"target="_blank">📚 教育訓練相關</a>
+
+        <a href="https://river-beef-217.notion.site/2026-334a4fa1d89280db919fca0b1515e700?source=copy_link" class="btn btn-lightblue" target="_blank">
+            📚 教育訓練相關
+        </a>
 
         <div class="footer">內部專用系統 · 網頁請勿外流</div>
     </div>
-
 </body>
 </html>
