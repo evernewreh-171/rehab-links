@@ -178,8 +178,7 @@
     font-family:"JetBrains Mono",monospace;
     font-size:9px;
     color:var(--ink-soft);
-    margin-bottom:6px;
-    padding-left:78px;
+    margin-bottom:8px;
     position:relative;
     height:14px;
   }
@@ -187,41 +186,55 @@
 
   .row{
     display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:10px;
+    flex-direction:column;
+    gap:5px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
   }
-  .row:last-child{ margin-bottom:0; }
+  .row:last-child{ border-bottom:none; padding-bottom:0; }
+  .row-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+  }
   .name{
-    flex:0 0 68px;
-    font-size:12px;
-    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    font-weight:700;
     color:var(--ink);
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
   }
+  .name .dot{
+    width:9px;height:9px;border-radius:50%;
+    flex:0 0 auto;
+  }
+  .daterange{
+    font-family:"JetBrains Mono",monospace;
+    font-size:12px;
+    font-weight:500;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
   .track{
     position:relative;
-    flex:1;
-    height:26px;
+    width:100%;
+    height:10px;
     background:repeating-linear-gradient(
       to right, transparent, transparent calc(100%/7 - 1px), var(--line) calc(100%/7 - 1px), var(--line) calc(100%/7)
     );
-    border-radius:7px;
+    border-radius:5px;
   }
   .bar{
     position:absolute;
-    top:3px; bottom:3px;
-    border-radius:6px;
-    display:flex;
-    align-items:center;
-    padding:0 8px;
-    font-family:"JetBrains Mono",monospace;
-    font-size:10px;
-    color:#fff;
-    white-space:nowrap;
-    overflow:hidden;
+    top:0; bottom:0;
+    border-radius:5px;
+    min-width:6px;
     box-shadow:0 1px 2px rgba(0,0,0,.12);
   }
   .bar.overlap{
@@ -305,7 +318,6 @@ function colorFor(name){
 function parseCSV(text){
   const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
   const rows = lines.map(line => {
-    // 簡易 CSV 解析，處理雙引號包住的欄位
     const cells = [];
     let cur = "", inQuotes = false;
     for(let i=0; i<line.length; i++){
@@ -406,7 +418,6 @@ function render(DATA){
     `<span><span class="dot" style="background:${colorFor(n)}"></span>${n}</span>`
   ).join("") + `<span><span class="dot" style="background:transparent;border:2px solid #F0653E"></span>日期重疊</span>`;
 
-  // 預設顯示：今天所在月份（若有），否則第一個月份
   const today = new Date();
   const todayKey = monthKey(today.getFullYear(), today.getMonth());
   const defaultMonth = monthList.includes(todayKey) ? todayKey : monthList[0];
@@ -452,11 +463,12 @@ function render(DATA){
       const widthPct = ((e.clipEnd - e.clipStart + 1)/dim)*100;
       return `
         <div class="row">
-          <div class="name">${e.name}</div>
+          <div class="row-top">
+            <div class="name"><span class="dot" style="background:${colorFor(e.name)}"></span>${e.name}</div>
+            <div class="daterange">${fmt(e.start)}–${fmt(e.end)}</div>
+          </div>
           <div class="track">
-            <div class="bar${e.overlap ? " overlap":""}" style="left:${leftPct}%; width:${widthPct}%; background:${colorFor(e.name)}">
-              ${fmt(e.start)}–${fmt(e.end)}
-            </div>
+            <div class="bar${e.overlap ? " overlap":""}" style="left:${leftPct}%; width:${widthPct}%; background:${colorFor(e.name)}"></div>
           </div>
         </div>`;
     }).join("");
